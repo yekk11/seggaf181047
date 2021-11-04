@@ -3,18 +3,19 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="{% static 'ico/favico.png' %}">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  {% block meta %}
-  {% endblock meta %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'ico/favico.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block meta %}
+    {% endblock meta %}
 </head>
 
 <body>
     {% block content %}
     {% endblock content %}
-    <img src="{% static 'img/foto/iyek123.jpg' %}" width="200" height="200">
+    <a href="/">Halaman Utama</a>
+    <a href="/register">Halaman Registrasi</a>
 </body>
 
 </html>
