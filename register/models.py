@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+class ContactModel(models.Model):
+    nama = forms.CharField()
+    nim = forms.CharField()
