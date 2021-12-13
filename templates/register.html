@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="{% static 'css/reg_form.css' %}">
 </head>
 <body>
-<h1>Selamat Datang</h1><h2>{{nama}}, {{nim}}</h2>
-<form method="post">
-    {%csrf_token%}
-    <table>
-        {{contact_form.as_table}}
-    </table>
-    <button type="submit">Daftar</button>
-</form>
+    <h1>Selamat Datang</h1>
+    <h2>Data Mahasiswa</h2>
+    {% for isi in data %}
+        <h4>{{isi.nama}}</h4>
+        <h4>{{isi.nim}}</h4>
+    {% endfor %}
+
+
 <!--<form class="signup-form" method="post">
     {% csrf_token %}
     <table>
