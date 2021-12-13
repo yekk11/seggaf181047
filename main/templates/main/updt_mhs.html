@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Update Data</title>
+{% endblock meta %}
+
+{% block content %}
+<h3>Update Data Mahasiswa</h3><br>
+<div class="form-group">
+    <form action="" method="POST">
+        {% csrf_token%}
+        {{ form.as_p }}
+        <br>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>{{judul}}</title>
+{% endblock meta %}
+
+{% block content %}
+<h3>Input Data Mahasiswa</h3><br>
+<form method="POST" action="{% url 'main:create'}">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input type="text" class="form-control" name="nim" aria-describedby="emailHelp" value="{{nim}}"
+               placeholder="NIM">
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="nama" aria-describedby="emailHelp" value="{{nama}}"
+               placeholder="Nama">
+    </div>
+    <div class="mb-3">
+        <input type="email" class="form-control" name="email" aria-describedby="emailHelp" value="{{email}}"
+               placeholder="Email : example@mail.com">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock content %}

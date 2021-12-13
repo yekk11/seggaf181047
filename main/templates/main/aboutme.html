@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>About Me</title>
+{% endblock meta %}
+
+{% block content %}
+<h1 style="text-align:center">Biodataku</h1>
+  <table style="margin-left: auto;  margin-right: auto;">
+    <tr>
+      <td style="width:160px"><img src="{% static 'img/profile.jpg' %}" width="150" height="225"></td>
+      <td style="width:200px; vertical-align:top">
+        Nama<br>
+        NIM<br>
+        Asal Universitas<br>
+        Tempat Lahir<br>
+        Tanggal Lahir<br>
+        Agama<br>
+        Kewarganegaraan<br>
+        Status<br>
+        Email<br>
+        WA<br>
+        Instagram<br>
+      </td>
+      <td style="width:10px; vertical-align:top">
+        :<br>
+        :<br>
+        :<br>
+        :<br>
+        :<br>
+        :<br>
+        :<br>
+        :<br>
+        :<br>
+        :<br>
+        :<br>
+      </td>
+      <td style="width:200px; vertical-align:top">
+        Muhammad Seggaf<br>
+        181810101047<br>
+        Universitas Jember<br>
+        Situbondo<br>
+        11 Juni 1999<br>
+        Islam<br>
+        Indonesia<br>
+        Belum Menikah<br>
+        181810101047@mail.unej.ac.id<br>
+        085331729202<br>
+        yekk_aidid11<br>
+      </td>
+    </tr>
+  </table>
+{% endblock content %}
