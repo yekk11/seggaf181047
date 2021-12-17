@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Belajar Django | {{judul}}</title>
+{% endblock meta %}
+
+{% block content %}
+<h2 align="center">Data Mahasiswa</h2>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+<button type="button" class="btn btn-success btn-sm" onclick="location.href='{% url 'main:create' %}'">+
+    Tambah Data
+</button></div>
+<br>
+<table class="table">
+    <thead class="table-dark">
+    <tr>
+        <th scope="col" style="text-align:center">NIM</th>
+        <th scope="col" style="text-align:center">Nama</th>
+        <th scope="col" style="text-align:center">Email</th>
+        <th scope="col" style="text-align:center">Aksi</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for isi in data %}
+    <tr valign="middle">
+        <td width="130px">{{isi.nim}}</td>
+        <td>{{isi.nama}}</td>
+        <td>{{isi.email}}</td>
+        <td width="120px">
+            <button type="button" class="btn btn-primary btn-sm"
+                    onclick="location.href='{% url 'main:update-mhs' isi.nim %}'">
+                Edit
+            </button>
+            <button type="button" class="btn btn-danger btn-sm"
+                    onclick="location.href='{% url 'main:delete-mhs' isi.nim %}'">
+                Hapus
+            </button>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'register.html' %}
+
+{% block meta %}
+<title>Enkripsi Vigenere Cipher</title>
+{% endblock meta %}
+
+{% block content %}
+<h2 align="center">Enkripsi <i>Vigenere Cipher</i></h2><br>
+<div class="row justify-content-around">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <b>Proses Enkripsi</b>
+            </div>
+            <div class="card-body">
+                <form method="post" name="enkripsi">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <textarea class="form-control" name="plainteks" rows="7" placeholder="Plainteks">{{plainteks}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" name="kunci" rows="7" placeholder="Kunci">{{kunci}}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enkripsi</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <b>Hasil Enkripsi</b>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{dispcipher}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

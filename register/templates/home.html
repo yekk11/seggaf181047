@@ -1,0 +1,36 @@
+{% extends 'register.html' %}
+
+{% block meta %}
+<title>Cryptography APP</title>
+{% endblock meta %}
+
+{% block content %}
+<h2 align="center">Kriptografi & Steganografi</i></h2><br>
+<div class="row justify-content-around">
+    <div class="col">
+        <div class="list-group">
+            <li class="list-group-item list-group-item-success"><i>Vigenere Cipher</i></li>
+            <a href="{% url 'register:vcenkripsi' %}" class="list-group-item list-group-item-action">Enkripsi</a>
+            <a href="{% url 'register:vcdekripsi' %}" class="list-group-item list-group-item-action">Dekripsi</a>
+        </div>
+        <div class="list-group">
+            <li class="list-group-item list-group-item-primary"><i>Caesar Cipher</i></li>
+            <a href="{% url 'register:caesarenc' %}" class="list-group-item list-group-item-action">Enkripsi</a>
+            <a href="{% url 'register:caesardec' %}" class="list-group-item list-group-item-action">Dekripsi</a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="list-group">
+            <li class="list-group-item list-group-item-success"><i>Least Significant Bit</i></li>
+            <a href="{% url 'register:lsbembed' %}" class="list-group-item list-group-item-action">Embed</a>
+            <a href="{% url 'register:lsbextract' %}" class="list-group-item list-group-item-action">Extract</a>
+        </div>
+        <div class="list-group">
+            <li class="list-group-item list-group-item-primary"><i>Histogram Shifting</i></li>
+            <a href="{% url 'register:caesarenc' %}" class="list-group-item list-group-item-action">Embed</a>
+            <a href="{% url 'register:caesardec' %}" class="list-group-item list-group-item-action">Extract</a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
