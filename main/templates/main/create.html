@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block meta %}
-<title>{{judul}}</title>
+<title>Belajar Django | {{judul}}</title>
 {% endblock meta %}
 
 {% block content %}
 <h3>Input Data Mahasiswa</h3><br>
-<form method="POST" action="{% url 'main:create'}">
+<form method="POST">
     {% csrf_token %}
     <div class="mb-3">
         <input type="text" class="form-control" name="nim" aria-describedby="emailHelp" value="{{nim}}"

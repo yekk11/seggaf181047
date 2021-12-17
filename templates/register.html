@@ -2,137 +2,74 @@
 {% load static %}
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Halaman Registrasi</title>
-    <link rel="stylesheet" href="{% static 'css/reg_form.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="{% static 'ico/favico.png' %}">
+    {% block meta %}
+    {% endblock meta %}
 </head>
+
 <body>
-    <h1>Selamat Datang</h1>
-    <h2>Data Mahasiswa</h2>
-    {% for isi in data %}
-        <h4>{{isi.nama}}</h4>
-        <h4>{{isi.nim}}</h4>
-    {% endfor %}
-
-
-<!--<form class="signup-form" method="post">
-    {% csrf_token %}
-    <table>
-        {{contact_form.as_table}}
-    </table>
-    {{nama}}|{{nim}}
-    &lt;!&ndash; form header &ndash;&gt;
-    <div class="form-header">
-        <h1><a href="/">Homepage</a> | <a href="/register">Register Page</a></h1>
-    </div>
-
-    &lt;!&ndash; form body &ndash;&gt;
-    <div class="form-body">
-        &lt;!&ndash; Firstname and Lastname &ndash;&gt;
-        <div class="horizontal-group">
-            <div class="form-group left">
-                <label class="label-title">Nama Depan * | {{firstname}}</label>
-                <input type="text" name="firstname" class="form-input" required="required"/>
-            </div>
-            <div class="form-group right">
-                <label class="label-title">Nama Belakang | {{lastname}}</label>
-                <input type="text" name="lastname" class="form-input"/>
-            </div>
-        </div>
-
-        &lt;!&ndash; Email &ndash;&gt;
-        <div class="form-group">
-            <label for="email" class="label-title">Email *</label>
-            <input type="email" id="email" class="form-input" placeholder="example@mail.com"/>
-        </div>
-
-        &lt;!&ndash; Passwrod and confirm password &ndash;&gt;
-        <div class="horizontal-group">
-            <div class="form-group left">
-                <label for="password" class="label-title">Kata Sandi *</label>
-                <input type="password" id="password" class="form-input"/>
-            </div>
-            <div class="form-group right">
-                <label for="confirm-password" class="label-title">Ulangi Kata Sandi *</label>
-                <input type="password" class="form-input" id="confirm-password"/>
-            </div>
-        </div>
-
-        &lt;!&ndash; Gender and Hobbies &ndash;&gt;
-        <div class="horizontal-group">
-            <div class="form-group left">
-                <label class="label-title">Jenis kelamin:</label>
-                <div class="input-group">
-                    <label for="male"><input type="radio" name="gender" value="male" id="male"> Pria</label>
-                    <label for="female"><input type="radio" name="gender" value="female" id="female"> Wanita</label>
-                </div>
-            </div>
-            <div class="form-group right">
-                <label class="label-title">Hobi</label>
-                <div>
-                    <label><input type="checkbox" value="Web">Music</label>
-                    <label><input type="checkbox" value="iOS">Sports</label>
-                    <label><input type="checkbox" value="Andriod">Travel</label>
-                    <label><input type="checkbox" value="Game">Movies</label>
-                </div>
-            </div>
-        </div>
-
-        &lt;!&ndash; Source of Income and Income &ndash;&gt;
-        <div class="horizontal-group">
-            <div class="form-group left">
-                <label class="label-title">Source of Income</label>
-                <select class="form-input" id="level">
-                    <option value="B">Employed</option>
-                    <option value="I">Self-employed</option>
-                    <option value="A">Unemployed</option>
-                </select>
-            </div>
-            <div class="form-group right">
-                <label for="experience" class="label-title">Income</label>
-                <input type="range" min="5" max="100" step="5" value="0" id="experience" class="form-input"
-                       onChange="change();" style="height:28px;width:78%;padding:0;">
-                <span id="range-label">5jt</span>
-            </div>
-        </div>
-
-        &lt;!&ndash; Profile picture and Age &ndash;&gt;
-        <div class="horizontal-group">
-            <div class="form-group left">
-                <label for="choose-file" class="label-title">Upload Profile Picture</label>
-                <input type="file" id="choose-file" size="80">
-            </div>
-            <div class="form-group right">
-                <label for="experience" class="label-title">Usia</label>
-                <input type="number" min="18" max="50" value="18" class="form-input">
-            </div>
-        </div>
-
-        &lt;!&ndash; Bio &ndash;&gt;
-        <div class="form-group">
-            <label for="choose-file" class="label-title">Bio</label>
-            <textarea class="form-input" rows="4" cols="50" style="height:auto"></textarea>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="https://unej.ac.id">
+            <img src="http://kemahasiswaan.unej.ac.id/wp-content/uploads/2020/07/cropped-Logo-Baku-UNEJ-2020-Square.png"
+                 alt="" width="40" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'main:home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'main:aboutme' %}">Tentang Saya</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Django APP
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'main:data-mhs' %}">Database</a></li>
+                        <li><a class="dropdown-item" href="{% url 'register:home' %}">Kriptografi & Steganografi</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Menu Lain</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </div>
     </div>
+</nav>
+<br><br><br>
+<div class="container">
+    {% block content %}
+    {% endblock content %}
+</div>
+<br><br>
 
-    &lt;!&ndash; form-footer &ndash;&gt;
-    <div class="form-footer">
-        <span>* required | {{contributor}}</span>
-        <button type="submit" class="btn">Daftar</button>
+<!-- Footer -->
+<nav class="navbar fixed-bottom navbar-dark bg-dark" style="height:30px">
+    <div class="container-fluid">
+            <a class="navbar-brand" style="font-size:11pt; margin-top:-10px;">© Copyright 2021 | Muhammad Seggaf </a>
     </div>
+</nav>
+<!-- End of Footer -->
 
-</form>-->
-
-<!-- Script for range input label -->
-<script>
-      var rangeLabel = document.getElementById("range-label");
-      var experience = document.getElementById("experience");
-
-      function change() {
-      rangeLabel.innerText = experience.value + "jt";
-      }
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>

@@ -1,17 +1,12 @@
 {% extends 'base.html' %}
 
 {% block meta %}
-<title>Data Mahasiswa</title>
+<title>Belajar Django | {{judul}}</title>
 {% endblock meta %}
 
 {% block content %}
-<h2>Data Mahasiswa</h2>
-{% for isi in data %}
-<strong>{{isi.nim}}</strong><br>
-Nama : {{isi.nama}}<br>
-Email : {{isi.email}}<br>
-<button type="button" class="btn btn-primary" onclick="location.href='{% url 'main:update-mhs' isi.id %}'">Edit</button>
-<button type="button" class="btn btn-danger" onclick="location.href='{% url 'main:delete-mhs' isi.id %}'">Hapus</button>
-<hr>
-{% endfor %}
+<h2>Selamat Datang, Pengunjung!</h2>
+<br>
+<h3 style="font-weight:bold">What is Django?</h3>
+Django is a high-level Python Web framework that encourages rapid development and clean pragmatic design. A Web framework is a set of components that provide a standard way to develop websites fast and easily. Django’s primary goal is to ease the creation of complex database-driven websites. Some well known sites that use Django include PBS, Instagram, Disqus, Washington Times, Bitbucket and Mozilla.
 {% endblock content %}
