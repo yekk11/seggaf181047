@@ -98,4 +98,7 @@ def lsbembed(request):
         return render(request, 'lsbembed.html', {})
 
 def lsbextract(request):
-    return render(request, 'lsbextract.html', {})
+    if request.method == 'POST':
+        return render(request, 'lsbextract.html', {})
+    else:
+        return render(request, 'lsbextract.html', {})
