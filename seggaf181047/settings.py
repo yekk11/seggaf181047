@@ -116,7 +116,7 @@ WSGI_APPLICATION = 'seggaf181047.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jdqskmlrmpctao',
+        'NAME': 'd2dpv2kt5rpjis',
         'USER': 'jdqskmlrmpctao',
         'PASSWORD': 'ccb671ccc0787486cd93a8e95f1e055dc674b81452b085639fc0553b9ff119ce',
         'HOST': 'ec2-3-226-211-228.compute-1.amazonaws.com',
