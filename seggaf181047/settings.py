@@ -102,13 +102,24 @@ WSGI_APPLICATION = 'seggaf181047.wsgi.application'
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 #}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'apznrksl',
+#        'USER': 'apznrksl',
+#        'PASSWORD': 'bprgAn8e41nikhjYmaXCfR2HOGmd1AX-',
+#        'HOST': 'castor.db.elephantsql.com',
+#        'PORT': '5432',
+#    }
+#}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'apznrksl',
-        'USER': 'apznrksl',
-        'PASSWORD': 'bprgAn8e41nikhjYmaXCfR2HOGmd1AX-',
-        'HOST': 'castor.db.elephantsql.com',
+        'NAME': 'jdqskmlrmpctao',
+        'USER': 'jdqskmlrmpctao',
+        'PASSWORD': 'ccb671ccc0787486cd93a8e95f1e055dc674b81452b085639fc0553b9ff119ce',
+        'HOST': 'ec2-3-226-211-228.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
