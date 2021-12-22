@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'register.html' %}
 
-</body>
-</html>
+{% block meta %}
+<title>Enkripsi Vigenere Cipher</title>
+{% endblock meta %}
+
+{% block content %}
+<h2 align="center">Enkripsi <i>Vigenere Cipher</i></h2><br>
+<div class="row justify-content-around">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <b>Proses Ekstrak</b>
+            </div>
+            <div class="card-body">
+                <form method="post" name="enkripsi">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label">Pilih <i>cover image</i> </label>
+                        <input class="form-control form-control-sm" name="coverimg" id="image-source" onchange="previewImage();" type="file" accept="image/png">
+                        <br><center><img id="image-preview" alt="Image Preview" width="90%"/></center>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" name="secret" rows="7" placeholder="Pesan rahasia"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enkripsi</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <b>Hasil Enkripsi</b>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{data1}}; {{data2}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewImage() {
+    document.getElementById("image-preview").style.display = "block";
+    var oFReader = new FileReader();
+     oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
+
+    oFReader.onload = function(oFREvent) {
+      document.getElementById("image-preview").src = oFREvent.target.result;
+    };
+  };
+</script>
+{% endblock content %}

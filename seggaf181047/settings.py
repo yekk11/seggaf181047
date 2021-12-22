@@ -96,10 +96,20 @@ WSGI_APPLICATION = 'seggaf181047.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'apznrksl',
+        'USER': 'apznrksl',
+        'PASSWORD': 'bprgAn8e41nikhjYmaXCfR2HOGmd1AX-',
+        'HOST': 'castor.db.elephantsql.com',
+        'PORT': '5432',
     }
 }
 
